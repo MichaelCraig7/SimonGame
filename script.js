@@ -1,6 +1,6 @@
 
 let userScore = {
-    user: "",
+    user: '',
     score: 0,
 
     startButton: function () {
@@ -9,7 +9,7 @@ let userScore = {
             this.user = pName
         }
         console.log(userScore)
-
+    
     }
 }
 
