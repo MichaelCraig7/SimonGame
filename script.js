@@ -4,7 +4,7 @@ let userScore = {
     score: 0,
 
     startButton: function () {
-        let pName = prompt('WHO CHALLENGES SIMON?', "You can't win")
+        let pName = prompt('WHO CHALLENGES SIMON?', "You cannot win")
         if (pName != null) {
             this.user = pName
         }
@@ -12,6 +12,14 @@ let userScore = {
     
     }
 }
+
+simonValues = []
+userValues = []
+
+$('b1').append(userValues)
+$('b1').append(userValues)
+$('b1').append(userValues)
+$('b1').append(userValues)
 
 $(() => {
     $('.startBtn').click(userScore.startButton)
