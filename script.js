@@ -26,12 +26,14 @@ $(() => {
 
     equalCheck = function () {
         let finalScore = userScore.userValues.length
-        if (userScore.simonValues != userScore.userValues) {
-            console.log('nope')
+        console.log(userScore.simonValues, userScore.userValues)
+        if (userScore.simonValues[0] !== userScore.userValues[0]) {
+            gameOver()
         } 
-        else if (userScore.simonValues === userScore.userValues) {
-            console.log('!!!!')
+        else if (userScore.simonValues[0] === userScore.userValues[0]) {
+            startGame()
         }
+        
         // else {
         //     alert(finalScore)
         // }
