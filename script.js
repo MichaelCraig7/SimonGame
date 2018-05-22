@@ -12,7 +12,7 @@ $(() => {
 startGame = function () {
     // reset()?
     let randomBtnValue = userScore.btnValues[Math.floor(Math.random() * userScore.btnValues.length)]
-    $(randomBtnValue).append(userScore.simonValues)
+    userScore.simonValues.push(randomBtnValue)
 }
 
 startButton = function () {
@@ -27,9 +27,6 @@ bleh = function () {
     console.log(userScore)
 }
 
-})
-
-$(() => {
     $('.startBtn').click(startButton)
     $('.b1').click(bleh)
     $('.r2').click(startGame)
