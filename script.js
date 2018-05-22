@@ -11,22 +11,21 @@ let userScore = {
         if (pName != null) {
             this.user = pName
         }
-        console.log(userScore)
-        startGame()
-    }
-},
+    },
 
-startGame: function () {
-    for (i=0; )
-    // reset()?
-    btnValues[Math.floor(Math.random() * btnValues.length)];
-},
 
+    startGame: function () {
+        // reset()?
+        let randomBtnValue = userScore.btnValues[Math.floor(Math.random() * userScore.btnValues.length)]
+        $(randomBtnValue).append(userScore.simonValues)
+        // userScore.simonValues.push(randomBtnValue)
+    },
+}
 // $('b1').append(userValues)
 // $('r2').append(userValues)
 // $('g3').append(userValues)
 // $('y4').append(userValues)
 
 $(() => {
-    $('.startBtn').click(userScore.startButton)
+    $('.startBtn').click(userScore.startGame)
 })
