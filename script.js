@@ -10,7 +10,23 @@ let userScore = {
 $(() => {
 
     listenForUser = function () {
-        
+
+    }
+
+    btnAssignmentB1 = function () {
+        userScore.userValues.push('.b1')
+    }
+
+    btnAssignmentR2 = function () {
+        userScore.userValues.push('.r2')
+    }
+
+    btnAssignmentG3 = function () {
+        userScore.userValues.push('.g3')
+    }
+
+    btnAssignmentY4 = function () {
+        userScore.userValues.push('.y4')
     }
 
     delaySimon = function () {
@@ -93,8 +109,8 @@ $(() => {
     }
 
     $('.startBtn').click(startButton)
-    $('.b1').click(bleh)
-    $('.r2').click(reset)
-    // $('.g3').click(userScore)
-    // $('.y4').click(userScore)
+    $('.b1').click(btnAssignmentB1)
+    $('.r2').click(btnAssignmentR2)
+    $('.g3').click(btnAssignmentG3)
+    $('.y4').click(btnAssignmentY4)
 })
