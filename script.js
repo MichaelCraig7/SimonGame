@@ -28,8 +28,6 @@ $(() => {
         let finalScore = userScore.userValues.length
         let equalLength = userScore.simonValues.length === userScore.userValues.length
         for (i = 0; i < userScore.simonValues.length; i++) {
-            console.log(userScore.simonValues[i] )
-            console.log(userScore.userValues[i] )
             if (equalLength && (userScore.simonValues[i] === userScore.userValues[i])) {
                 userScore.score++
                 startGame()
@@ -63,99 +61,100 @@ $(() => {
         setTimeout(showSimonMove, 500)
     }
 
-    // b1Tester = function () {
-    //     $('.b1 a').removeClass('blue')
-    //     $('.b1 a').addClass('black')
-    //     setTimeout(b1Tester2, 500)
-    // }
-    // b1Tester2 = function () {
-    //     $('.b1 a').removeClass('black')
-    //     $('.b1 a').addClass('blue')
-    // }
+    b1Tester = function () {
+        $('.b1 a').removeClass('blue')
+        $('.b1 a').addClass('black')
+        setTimeout(b1Tester2, 500)
+    }
+    b1Tester2 = function () {
+        $('.b1 a').removeClass('black')
+        $('.b1 a').addClass('blue')
+    }
 
-    // r2Tester = function () {
-    //     $('.r2 a').removeClass('red')
-    //     $('.r2 a').addClass('black')
-    //     setTimeout(r2Tester2, 500)
-    // }
-    // r2Tester2 = function () {
-    //     $('.r2 a').removeClass('black')
-    //     $('.r2 a').addClass('red')
-    // }
+    r2Tester = function () {
+        $('.r2 a').removeClass('red')
+        $('.r2 a').addClass('black')
+        setTimeout(r2Tester2, 500)
+    }
+    r2Tester2 = function () {
+        $('.r2 a').removeClass('black')
+        $('.r2 a').addClass('red')
+    }
 
-    // g3Tester = function () {
-    //     $('.g3 a').removeClass('green')
-    //     $('.g3 a').addClass('black')
-    //     setTimeout(g3Tester2, 500)
-    // }
-    // g3Tester2 = function () {
-    //     $('.g3 a').removeClass('black')
-    //     $('.g3 a').addClass('green')
-    // }
+    g3Tester = function () {
+        $('.g3 a').removeClass('green')
+        $('.g3 a').addClass('black')
+        setTimeout(g3Tester2, 500)
+    }
+    g3Tester2 = function () {
+        $('.g3 a').removeClass('black')
+        $('.g3 a').addClass('green')
+    }
 
-    // y4Tester = function () {
-    //     $('.y4 a').removeClass('yellow')
-    //     $('.y4 a').addClass('black')
-    //     setTimeout(y4Tester2, 500)
-    // }
-    // y4Tester2 = function () {
-    //     $('.y4 a').removeClass('black')
-    //     $('.y4 a').addClass('yellow')
-    // }
-
-    // showSimonMove = function () {
-    //     let simonArr = userScore.simonValues
-    //     for (i = 0; i < simonArr.length; i++)
-    //         if (simonArr[i] === '.b1') {
-    //             setTimeout(b1Tester, 500)
-    //         } else if (simonArr[i] === '.r2') {
-    //             setTimeout(r2Tester, 500)
-    //         } else if (simonArr[i] === '.g3') {
-    //             setTimeout(g3Tester, 500)
-    //         } else if (simonArr[i] === '.y4') {
-    //             setTimeout(y4Tester, 500)
-    //         }
-    //     // setTimeout(showSimonMove2, 500)
-    // }
+    y4Tester = function () {
+        $('.y4 a').removeClass('yellow')
+        $('.y4 a').addClass('black')
+        setTimeout(y4Tester2, 500)
+    }
+    y4Tester2 = function () {
+        $('.y4 a').removeClass('black')
+        $('.y4 a').addClass('yellow')
+    }
 
     showSimonMove = function () {
         let simonArr = userScore.simonValues
+        inc = 0
         for (i = 0; i < simonArr.length; i++) {
             if (simonArr[i] === '.b1') {
-                $('.b1 a').removeClass('blue')
-                $('.b1 a').addClass('black')
+                setTimeout(b1Tester, inc += (i + i + 1 * 500))
             } else if (simonArr[i] === '.r2') {
-                $('.r2 a').removeClass('red')
-                $('.r2 a').addClass('black')
+                setTimeout(r2Tester, inc += (i + i + 1 * 500))
             } else if (simonArr[i] === '.g3') {
-                $('.g3 a').removeClass('green')
-                $('.g3 a').addClass('black')
+                setTimeout(g3Tester, inc += (i + i + 1 * 500))
             } else if (simonArr[i] === '.y4') {
-                $('.y4 a').removeClass('yellow')
-                $('.y4 a').addClass('black')
+                setTimeout(y4Tester, inc += (i + i + 1 * 500))
             }
         }
-        setTimeout(showSimonMove2, 500)
     }
 
-    showSimonMove2 = function () {
-        let simonArr = userScore.simonValues
-        for (i = 0; i < simonArr.length; i++) {
-            if (simonArr[i] === '.b1') {
-                $('.b1 a').removeClass('black')
-                $('.b1 a').addClass('blue')
-            } else if (simonArr[i] === '.r2') {
-                $('.r2 a').removeClass('black')
-                $('.r2 a').addClass('red')
-            } else if (simonArr[i] === '.g3') {
-                $('.g3 a').removeClass('black')
-                $('.g3 a').addClass('green')
-            } else if (simonArr[i] === '.y4') {
-                $('.y4 a').removeClass('black')
-                $('.y4 a').addClass('yellow')
-            }
-        }
-    }
+    // showSimonMove = function () {
+    //     let simonArr = userScore.simonValues
+    //     for (i = 0; i < simonArr.length; i++) {
+    //         if (simonArr[i] === '.b1') {
+    //             $('.b1 a').removeClass('blue')
+    //             $('.b1 a').addClass('black')
+    //         } else if (simonArr[i] === '.r2') {
+    //             $('.r2 a').removeClass('red')
+    //             $('.r2 a').addClass('black')
+    //         } else if (simonArr[i] === '.g3') {
+    //             $('.g3 a').removeClass('green')
+    //             $('.g3 a').addClass('black')
+    //         } else if (simonArr[i] === '.y4') {
+    //             $('.y4 a').removeClass('yellow')
+    //             $('.y4 a').addClass('black')
+    //         }
+    //     }
+    //     setTimeout(showSimonMove2, 500)
+    // }
+
+    // showSimonMove2 = function () {
+    //     let simonArr = userScore.simonValues
+    //     for (i = 0; i < simonArr.length; i++) {
+    //         if (simonArr[i] === '.b1') {
+    //             $('.b1 a').removeClass('black')
+    //             $('.b1 a').addClass('blue')
+    //         } else if (simonArr[i] === '.r2') {
+    //             $('.r2 a').removeClass('black')
+    //             $('.r2 a').addClass('red')
+    //         } else if (simonArr[i] === '.g3') {
+    //             $('.g3 a').removeClass('black')
+    //             $('.g3 a').addClass('green')
+    //         } else if (simonArr[i] === '.y4') {
+    //             $('.y4 a').removeClass('black')
+    //             $('.y4 a').addClass('yellow')
+    //         }
+    //     }
+    // }
 
     startGame = function () {
         // reset()?
