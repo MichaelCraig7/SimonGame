@@ -26,18 +26,20 @@ $(() => {
 
     equalCheck = function () {
         let finalScore = userScore.userValues.length
-        let equalLength = userScore.simonValues.length = userScore.userValues.length
+        let equalLength = userScore.simonValues.length === userScore.userValues.length
         for (i = 0; i < userScore.simonValues.length; i++) {
-            if (equalLength && userScore.simonValues[i] === userScore.userValues[i]) {
+            console.log(userScore.simonValues[i] )
+            console.log(userScore.userValues[i] )
+            if (equalLength && (userScore.simonValues[i] === userScore.userValues[i])) {
                 userScore.score++
                 startGame()
             }
             // else if (equalLength && userScore.simonValues[i] !== userScore.userValues[i]) {
-            //     gameOver()
-            // }
+            // gameOver()
         }
+        // }
         // else {
-        //     alert(finalScore)
+        // alert(finalScore)
         // }
     }
 
