@@ -9,8 +9,32 @@ let userScore = {
 
 $(() => {
 
-    listenForUser = function () {
+    gameOver = function () {
+        let finalScore = userScore.userValues.length
+        alert(finalScore)
+    }
 
+    listenForUser = function () {
+        let finalScore = userScore.userValues.length
+        if (userScore.simonValues.length = userScore.userValues.length) {
+            equalCheck()
+        } 
+        // else {
+        //     alert(finalScore)
+        // }
+    }
+
+    equalCheck = function () {
+        let finalScore = userScore.userValues.length
+        if (userScore.simonValues != userScore.userValues) {
+            console.log('nope')
+        } 
+        else if (userScore.simonValues === userScore.userValues) {
+            console.log('!!!!')
+        }
+        // else {
+        //     alert(finalScore)
+        // }
     }
 
     btnAssignmentB1 = function () {
@@ -70,7 +94,6 @@ $(() => {
                 $('.y4 a').addClass('yellow')
             }
         }
-        listenForUser()
     }
 
     startGame = function () {
@@ -88,19 +111,6 @@ $(() => {
         }
     }
 
-
-    // if (uservalue != simonValue)
-    //     gameOver()
-
-    bleh = function () {
-        console.log(userScore)
-    }
-
-    gameOver = function () {
-        let finalScore = userValues.length
-        alert(finalScore)
-    }
-
     reset = function () {
         userScore.score = 0
         userScore.simonValues = []
@@ -109,8 +119,24 @@ $(() => {
     }
 
     $('.startBtn').click(startButton)
-    $('.b1').click(btnAssignmentB1)
-    $('.r2').click(btnAssignmentR2)
-    $('.g3').click(btnAssignmentG3)
-    $('.y4').click(btnAssignmentY4)
+    // $('.b1').click(btnAssignmentB1, equalCheck)
+    // $('.r2').click(btnAssignmentR2, equalCheck)
+    // $('.g3').click(btnAssignmentG3, equalCheck)
+    // $('.y4').click(btnAssignmentY4, equalCheck)
+    $('.b1').on('click', function() {
+        btnAssignmentB1()
+        listenForUser()
+    })
+    $('.r2').on('click', function() {
+        btnAssignmentR2()
+        listenForUser()
+    })
+    $('.g3').on('click', function() {
+        btnAssignmentG3()
+        listenForUser()
+    })
+    $('.y4').on('click', function() {
+        btnAssignmentY4()
+        listenForUser()
+    })
 })
