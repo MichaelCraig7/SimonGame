@@ -9,6 +9,10 @@ let userScore = {
 
 $(() => {
 
+    listenForUser = function () {
+        
+    }
+
     showSimonMove = function () {
         let simonArr = userScore.simonValues
         for (i = 0; i < simonArr.length; i++) {
@@ -26,6 +30,7 @@ $(() => {
                 $('.y4 a').addClass('black')
             }
         }
+        listenForUser()
     }
 
     startGame = function () {
@@ -60,11 +65,12 @@ $(() => {
         userScore.score = 0
         userScore.simonValues = []
         userScore.userValues = []
+        startGame()
     }
 
     $('.startBtn').click(startButton)
     $('.b1').click(bleh)
-    // $('.r2').click(startGame)
+    $('.r2').click(reset)
     // $('.g3').click(userScore)
     // $('.y4').click(userScore)
 })
