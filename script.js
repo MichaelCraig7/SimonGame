@@ -13,6 +13,10 @@ $(() => {
         
     }
 
+    delaySimon = function () {
+        setTimeout(showSimonMove, 500)
+    }
+
     showSimonMove = function () {
         let simonArr = userScore.simonValues
         for (i = 0; i < simonArr.length; i++) {
@@ -30,6 +34,26 @@ $(() => {
                 $('.y4 a').addClass('black')
             }
         }
+        setTimeout(showSimonMove2, 500)
+    }
+
+    showSimonMove2 = function () {
+        let simonArr = userScore.simonValues
+        for (i = 0; i < simonArr.length; i++) {
+            if (simonArr[i] === '.b1') {
+                $('.b1 a').removeClass('black')
+                $('.b1 a').addClass('blue')
+            } else if (simonArr[i] === '.r2') {
+                $('.r2 a').removeClass('black')
+                $('.r2 a').addClass('red')
+            } else if (simonArr[i] === '.g3') {
+                $('.g3 a').removeClass('black')
+                $('.g3 a').addClass('green')
+            } else if (simonArr[i] === '.y4') {
+                $('.y4 a').removeClass('black')
+                $('.y4 a').addClass('yellow')
+            }
+        }
         listenForUser()
     }
 
@@ -37,7 +61,7 @@ $(() => {
         // reset()?
         let randomBtnValue = userScore.btnValues[Math.floor(Math.random() * userScore.btnValues.length)]
         userScore.simonValues.push(randomBtnValue)
-        showSimonMove()
+        delaySimon()
     }
 
     startButton = function () {
