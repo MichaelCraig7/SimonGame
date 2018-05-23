@@ -9,6 +9,11 @@ let userScore = {
 
 $(() => {
 
+    var audio1= new Audio('etc/audio1.wav');
+    var audio2= new Audio('etc/audio2.wav');
+    var audio3= new Audio('etc/audio3.wav');
+    var audio4= new Audio('etc/audio4.wav');
+
     scoreUpdate = function () {
         $('.score').html(`
     <h1>${userScore.score}</h1>
@@ -43,22 +48,6 @@ $(() => {
         }
     }
 
-
-    //     let equalLength = userScore.simonValues.length === userScore.userValues.length
-    //     let userV = userScore.userValues
-    //     for (i = 0; i < simonV.length; i++) {
-    //         if (userV.length < simonV.length && userV.length !== 0) {
-    //             equalCheck2()
-    //         } else if (userV > 0 && equalLength && (simonV[i] !== userV[i])) {
-    //             gameOver()
-    //         } else if (equalLength && (simonV[i] === userV[i])) {
-    //             userScore.score++
-    //             startGame()
-    //             scoreUpdate()
-    //         }
-    //     }
-    // }
-
     btnAssignmentB1 = function () {
         userScore.userValues.push('.b1')
     }
@@ -82,6 +71,7 @@ $(() => {
     b1Tester = function () {
         $('.b1 a').removeClass('blue')
         $('.b1 a').addClass('black')
+        audio1.play()
         setTimeout(b1Tester2, 200)
     }
     b1Tester2 = function () {
@@ -92,6 +82,8 @@ $(() => {
     r2Tester = function () {
         $('.r2 a').removeClass('red')
         $('.r2 a').addClass('black')
+        audio2.play()
+
         setTimeout(r2Tester2, 200)
     }
     r2Tester2 = function () {
@@ -102,6 +94,8 @@ $(() => {
     g3Tester = function () {
         $('.g3 a').removeClass('green')
         $('.g3 a').addClass('black')
+        audio3.play()
+
         setTimeout(g3Tester2, 200)
     }
     g3Tester2 = function () {
@@ -112,6 +106,8 @@ $(() => {
     y4Tester = function () {
         $('.y4 a').removeClass('yellow')
         $('.y4 a').addClass('black')
+        audio4.play()
+
         setTimeout(y4Tester2, 200)
     }
     y4Tester2 = function () {
@@ -121,7 +117,7 @@ $(() => {
 
     showSimonMove = function () {
         let simonArr = userScore.simonValues
-        inc = 0
+        let inc = 0
         for (i = 0; i < simonArr.length; i++) {
             if (simonArr[i] === '.b1') {
                 setTimeout(b1Tester, inc += (i + i + 1 * 500))
@@ -136,7 +132,6 @@ $(() => {
     }
 
     startGame = function () {
-        // reset()?
         let randomBtnValue = userScore.btnValues[Math.floor(Math.random() * userScore.btnValues.length)]
         userScore.simonValues.push(randomBtnValue)
         userScore.userValues = []
@@ -147,31 +142,39 @@ $(() => {
         let pName = prompt('WHO CHALLENGES SIMON?', "You cannot win")
         if (pName != null) {
             userScore.user = pName
-            startGame()
+            reset()
         }
     }
 
     reset = function () {
         userScore.score = 0
         userScore.userValues = []
+        userScore.simonValues = []
         startGame()
+        scoreUpdate()
+
     }
 
     $('.startBtn').click(startButton)
     $('.b1').on('click', function () {
         btnAssignmentB1()
         equalCheck()
+        audio1.play()
     })
     $('.r2').on('click', function () {
         btnAssignmentR2()
         equalCheck()
+        audio2.play()
     })
     $('.g3').on('click', function () {
         btnAssignmentG3()
         equalCheck()
+        audio3.play()
+
     })
     $('.y4').on('click', function () {
         btnAssignmentY4()
         equalCheck()
+        audio4.play()
     })
 })
