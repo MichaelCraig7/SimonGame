@@ -9,36 +9,38 @@ let userScore = {
 
 $(() => {
 
+    scoreUpdate = function () {
+        $('.score').html(`
+    <h1>${userScore.score}</h1>
+    `)
+    }
+
     gameOver = function () {
         let finalScore = userScore.simonValues.length - 1
         alert(finalScore)
     }
 
-    // listenForUser = function () {
-    //     let finalScore = userScore.userValues.length
-    //     if (userScore.simonValues.length = userScore.userValues.length) {
-    //         equalCheck()
-    //     }
-    //     // else {
-    //     //     alert(finalScore)
-    //     // }
-    // }
+    equalCheck2 = function () {
+        if (simonV[i] !== userV[i])
+
+    }
+
 
     equalCheck = function () {
-        let finalScore = userScore.userValues.length
         let equalLength = userScore.simonValues.length === userScore.userValues.length
-        for (i = 0; i < userScore.simonValues.length; i++) {
-            if (equalLength && (userScore.simonValues[i] === userScore.userValues[i])) {
+        let userV = userScore.userValues
+        let simonV = userScore.simonValues
+        for (i = 0; i < simonV.length; i++) {
+            if (userV.length < simonV.length && userV.length !== 0) {
+                equalCheck2()
+            } else if (userV > 0 && equalLength && (simonV[i] !== userV[i])) {
+                gameOver()
+            } else if (equalLength && (simonV[i] === userV[i])) {
                 userScore.score++
                 startGame()
+                scoreUpdate()
             }
-            // else if (equalLength && userScore.simonValues[i] !== userScore.userValues[i]) {
-            // gameOver()
         }
-        // }
-        // else {
-        // alert(finalScore)
-        // }
     }
 
     btnAssignmentB1 = function () {
@@ -64,7 +66,7 @@ $(() => {
     b1Tester = function () {
         $('.b1 a').removeClass('blue')
         $('.b1 a').addClass('black')
-        setTimeout(b1Tester2, 500)
+        setTimeout(b1Tester2, 200)
     }
     b1Tester2 = function () {
         $('.b1 a').removeClass('black')
@@ -74,7 +76,7 @@ $(() => {
     r2Tester = function () {
         $('.r2 a').removeClass('red')
         $('.r2 a').addClass('black')
-        setTimeout(r2Tester2, 500)
+        setTimeout(r2Tester2, 200)
     }
     r2Tester2 = function () {
         $('.r2 a').removeClass('black')
@@ -84,7 +86,7 @@ $(() => {
     g3Tester = function () {
         $('.g3 a').removeClass('green')
         $('.g3 a').addClass('black')
-        setTimeout(g3Tester2, 500)
+        setTimeout(g3Tester2, 200)
     }
     g3Tester2 = function () {
         $('.g3 a').removeClass('black')
@@ -94,7 +96,7 @@ $(() => {
     y4Tester = function () {
         $('.y4 a').removeClass('yellow')
         $('.y4 a').addClass('black')
-        setTimeout(y4Tester2, 500)
+        setTimeout(y4Tester2, 200)
     }
     y4Tester2 = function () {
         $('.y4 a').removeClass('black')
@@ -116,45 +118,6 @@ $(() => {
             }
         }
     }
-
-    // showSimonMove = function () {
-    //     let simonArr = userScore.simonValues
-    //     for (i = 0; i < simonArr.length; i++) {
-    //         if (simonArr[i] === '.b1') {
-    //             $('.b1 a').removeClass('blue')
-    //             $('.b1 a').addClass('black')
-    //         } else if (simonArr[i] === '.r2') {
-    //             $('.r2 a').removeClass('red')
-    //             $('.r2 a').addClass('black')
-    //         } else if (simonArr[i] === '.g3') {
-    //             $('.g3 a').removeClass('green')
-    //             $('.g3 a').addClass('black')
-    //         } else if (simonArr[i] === '.y4') {
-    //             $('.y4 a').removeClass('yellow')
-    //             $('.y4 a').addClass('black')
-    //         }
-    //     }
-    //     setTimeout(showSimonMove2, 500)
-    // }
-
-    // showSimonMove2 = function () {
-    //     let simonArr = userScore.simonValues
-    //     for (i = 0; i < simonArr.length; i++) {
-    //         if (simonArr[i] === '.b1') {
-    //             $('.b1 a').removeClass('black')
-    //             $('.b1 a').addClass('blue')
-    //         } else if (simonArr[i] === '.r2') {
-    //             $('.r2 a').removeClass('black')
-    //             $('.r2 a').addClass('red')
-    //         } else if (simonArr[i] === '.g3') {
-    //             $('.g3 a').removeClass('black')
-    //             $('.g3 a').addClass('green')
-    //         } else if (simonArr[i] === '.y4') {
-    //             $('.y4 a').removeClass('black')
-    //             $('.y4 a').addClass('yellow')
-    //         }
-    //     }
-    // }
 
     startGame = function () {
         // reset()?
@@ -179,28 +142,20 @@ $(() => {
     }
 
     $('.startBtn').click(startButton)
-    // $('.b1').click(btnAssignmentB1, equalCheck)
-    // $('.r2').click(btnAssignmentR2, equalCheck)
-    // $('.g3').click(btnAssignmentG3, equalCheck)
-    // $('.y4').click(btnAssignmentY4, equalCheck)
     $('.b1').on('click', function () {
         btnAssignmentB1()
-        // listenForUser()
         equalCheck()
     })
     $('.r2').on('click', function () {
         btnAssignmentR2()
-        // listenForUser()
         equalCheck()
     })
     $('.g3').on('click', function () {
         btnAssignmentG3()
-        // listenForUser()
         equalCheck()
     })
     $('.y4').on('click', function () {
         btnAssignmentY4()
-        // listenForUser()
         equalCheck()
     })
 })
