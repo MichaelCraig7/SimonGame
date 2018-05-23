@@ -13,12 +13,12 @@ $(() => {
     var audio2= new Audio('etc/audio2.wav');
     var audio3= new Audio('etc/audio3.wav');
     var audio4= new Audio('etc/audio4.wav');
-    var audio5= new Audio('etc/audio5.wav');
+    // var audio5= new Audio('etc/audio5.wav');
     var audio6= new Audio('etc/audio6.mp3');
 
     scoreUpdate = function () {
         $('.score').html(`
-    <h1>${userScore.score}</h1>
+    <h4>${userScore.score}</h4>
     `)
     }
 
@@ -82,27 +82,27 @@ $(() => {
     }
 
     r2Tester = function () {
-        $('.r2 a').removeClass('red')
-        $('.r2 a').addClass('black')
+        $('.r2').removeClass('red')
+        $('.r2').addClass('black')
         audio2.play()
 
         setTimeout(r2Tester2, 200)
     }
     r2Tester2 = function () {
-        $('.r2 a').removeClass('black')
-        $('.r2 a').addClass('red')
+        $('.r2').removeClass('black')
+        $('.r2').addClass('red')
     }
 
     g3Tester = function () {
-        $('.g3 a').removeClass('green')
-        $('.g3 a').addClass('black')
+        $('.g3').removeClass('green')
+        $('.g3').addClass('black')
         audio3.play()
 
         setTimeout(g3Tester2, 200)
     }
     g3Tester2 = function () {
-        $('.g3 a').removeClass('black')
-        $('.g3 a').addClass('green')
+        $('.g3').removeClass('black')
+        $('.g3').addClass('green')
     }
 
     y4Tester = function () {
@@ -145,8 +145,6 @@ $(() => {
         if (pName != null) {
             userScore.user = pName
             reset()
-            audio5.play()
-
         }
     }
 
