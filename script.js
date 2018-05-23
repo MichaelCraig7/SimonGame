@@ -20,28 +20,40 @@ $(() => {
         alert(finalScore)
     }
 
-    equalCheck2 = function () {
-        if (simonV[i] !== userV[i])
-
-    }
-
-
     equalCheck = function () {
-        let equalLength = userScore.simonValues.length === userScore.userValues.length
-        let userV = userScore.userValues
+        let i = 0
         let simonV = userScore.simonValues
-        for (i = 0; i < simonV.length; i++) {
-            if (userV.length < simonV.length && userV.length !== 0) {
-                equalCheck2()
-            } else if (userV > 0 && equalLength && (simonV[i] !== userV[i])) {
+        // let correct = true
+        for (let ele of userScore.userValues) {
+            if (ele !== simonV[i]) {
+                // correct = false
                 gameOver()
-            } else if (equalLength && (simonV[i] === userV[i])) {
+                return
+            }
+            i++
+            if (userScore.userValues.length === userScore.simonValues.length) {
                 userScore.score++
                 startGame()
                 scoreUpdate()
+                return
             }
         }
     }
+
+    //     let equalLength = userScore.simonValues.length === userScore.userValues.length
+    //     let userV = userScore.userValues
+    //     for (i = 0; i < simonV.length; i++) {
+    //         if (userV.length < simonV.length && userV.length !== 0) {
+    //             equalCheck2()
+    //         } else if (userV > 0 && equalLength && (simonV[i] !== userV[i])) {
+    //             gameOver()
+    //         } else if (equalLength && (simonV[i] === userV[i])) {
+    //             userScore.score++
+    //             startGame()
+    //             scoreUpdate()
+    //         }
+    //     }
+    // }
 
     btnAssignmentB1 = function () {
         userScore.userValues.push('.b1')
