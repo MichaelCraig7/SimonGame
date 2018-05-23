@@ -10,10 +10,10 @@ let userScore = {
 $(() => {
 
     var audio1 = new Audio('etc/audio1.wav');
-    var audio2 = new Audio('etc/audio2.wav');
+    var audio2 = new Audio('etc/audio7.wav');
     var audio3 = new Audio('etc/audio3.wav');
-    var audio4 = new Audio('etc/audio4.wav');
-    // var audio5= new Audio('etc/audio5.wav');
+    var audio4 = new Audio('etc/audio8.wav');
+    // var audio5 = new Audio('etc/audio5.wav');
     var audio6 = new Audio('etc/audio6.mp3');
 
     scoreUpdate = function () {
@@ -135,13 +135,13 @@ $(() => {
         let inc = 0
         for (i = 0; i < simonArr.length; i++) {
             if (simonArr[i] === '.b1') {
-                setTimeout(b1Tester, inc += (i + i + 1 * 500))
+                setTimeout(b1Tester, inc += (i + i + 1 * 750))
             } else if (simonArr[i] === '.r2') {
-                setTimeout(r2Tester, inc += (i + i + 1 * 500))
+                setTimeout(r2Tester, inc += (i + i + 1 * 750))
             } else if (simonArr[i] === '.g3') {
-                setTimeout(g3Tester, inc += (i + i + 1 * 500))
+                setTimeout(g3Tester, inc += (i + i + 1 * 750))
             } else if (simonArr[i] === '.y4') {
-                setTimeout(y4Tester, inc += (i + i + 1 * 500))
+                setTimeout(y4Tester, inc += (i + i + 1 * 750))
             }
         }
     }
