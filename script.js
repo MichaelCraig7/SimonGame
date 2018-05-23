@@ -9,12 +9,12 @@ let userScore = {
 
 $(() => {
 
-    var audio1= new Audio('etc/audio1.wav');
-    var audio2= new Audio('etc/audio2.wav');
-    var audio3= new Audio('etc/audio3.wav');
-    var audio4= new Audio('etc/audio4.wav');
+    var audio1 = new Audio('etc/audio1.wav');
+    var audio2 = new Audio('etc/audio2.wav');
+    var audio3 = new Audio('etc/audio3.wav');
+    var audio4 = new Audio('etc/audio4.wav');
     // var audio5= new Audio('etc/audio5.wav');
-    var audio6= new Audio('etc/audio6.mp3');
+    var audio6 = new Audio('etc/audio6.mp3');
 
     scoreUpdate = function () {
         $('.score').html(`
@@ -25,18 +25,31 @@ $(() => {
     gameOver = function () {
         let finalScore = userScore.simonValues.length - 1
         audio6.play()
+        scoreChange()
+    }
+
+    scoreChange = function () {
+        $('.scoreWord').html(`
+        <h4>${'FINAL SCORE'}</h4>
+        `)
+    }
+
+    finalWordRevert = function () {
+        $('.scoreWord').html(`
+        <h4>${'SCORE'}</h4>
+        `)
     }
 
     equalCheck = function () {
         let simonV = userScore.simonValues
         let userV = userScore.userValues
         for (let i = 0; i < userV.length; i++) {
-            if (userV[i] !== simonV[i]) {  
+            if (userV[i] !== simonV[i]) {
                 gameOver()
                 return
             }
             if ((userV.length === simonV.length) && (userV[i] === simonV[i])) {
-                if (userV.toString() !== simonV.toString()) {                    
+                if (userV.toString() !== simonV.toString()) {
                     gameOver()
                     return
                 }
@@ -154,8 +167,11 @@ $(() => {
         userScore.simonValues = []
         startGame()
         scoreUpdate()
-
+        finalWordRevert()
     }
+
+
+    // click and keydown events
 
     $('.startBtn').click(startButton)
     $('.b1').on('click', function () {
@@ -179,4 +195,43 @@ $(() => {
         equalCheck()
         audio4.play()
     })
+
+    $(document).keydown(function (e) {
+        if (e.keyCode == 32) {
+            startButton()
+        }
+    })
+
+    $(document).keydown(function (e) {
+        if (e.keyCode == 38) {
+            btnAssignmentB1()
+            equalCheck()
+            audio1.play()
+        }
+    })
+
+    $(document).keydown(function (e) {
+        if (e.keyCode == 37) {
+            btnAssignmentR2()
+            equalCheck()
+            audio2.play()
+        }
+    })
+
+    $(document).keydown(function (e) {
+        if (e.keyCode == 39) {
+            btnAssignmentG3()
+            equalCheck()
+            audio3.play()
+        }
+    })
+
+    $(document).keydown(function (e) {
+        if (e.keyCode == 40) {
+            btnAssignmentY4()
+            equalCheck()
+            audio4.play()
+        }
+    })
+
 })
