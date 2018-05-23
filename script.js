@@ -21,24 +21,35 @@ $(() => {
     }
 
     equalCheck = function () {
-        let i = 0
         let simonV = userScore.simonValues
+        let userV = userScore.userValues
         // let correct = true
-        for (let ele of userScore.userValues) {
-            if (ele !== simonV[i]) {
+
+        console.log(simonV)
+        console.log(userV)
+        for (let i = 0; i < userV.length; i++) {
+            console.log(userV[i])
+            console.log(simonV[i])
+            if (userV[i] !== simonV[i]) {
                 // correct = false
                 gameOver()
                 return
             }
-            i++
-            if (userScore.userValues.length === userScore.simonValues.length) {
-                userScore.score++
-                startGame()
-                scoreUpdate()
+            if ((userV.length === simonV.length) && (userV[i] === simonV[i])) {
+                if (userV.toString() !== simonV.toString()) {
+                    gameOver()
                 return
+            }
+            if (userV.toString() === simonV.toString()) {
+                userScore.score++
+            startGame()
+            scoreUpdate()
+            return
             }
         }
     }
+}
+
 
     //     let equalLength = userScore.simonValues.length === userScore.userValues.length
     //     let userV = userScore.userValues
