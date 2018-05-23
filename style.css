@@ -38,4 +38,18 @@ body {
 
 .scoreWord {
     margin-top: 32px;
+    font-family: nextGames1;
+}
+
+.score {
+    margin-bottom: 25px;
+    font-family: nextGames1;
+}
+
+.stBtn {
+        font-family: nextGames;
+}
+
+.difficulty {
+    font-family: nextGames;
 }

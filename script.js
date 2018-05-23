@@ -1,10 +1,16 @@
 
-let userScore = {
+let valueHolder = {
     user: '',
     score: 0,
     btnValues: ['.b1', '.r2', '.g3', '.y4'],
     simonValues: [],
     userValues: [],
+}
+
+let diffValues = {
+    easy: 1,
+    med: 0,
+    hard: 0,
 }
 
 $(() => {
@@ -16,33 +22,86 @@ $(() => {
     // var audio5 = new Audio('etc/audio5.wav');
     var audio6 = new Audio('etc/audio6.mp3');
 
+    change = function () {
+        if (diffValues.easy === 1 && diffValues.hard === 0 && diffValues.med === 0) {
+            diffValues.easy = 0
+            diffValues.med = 1
+        } else if (diffValues.easy === 0 && diffValues.hard === 0 && diffValues.med === 1) {
+            diffValues.med = 0
+            diffValues.hard = 1
+        } else if (diffValues.easy === 0 && diffValues.hard === 1 && diffValues.med === 0) {
+            diffValues.hard = 0
+            diffValues.easy = 1
+        }
+    }
+
+    startBtnToResetMedium = function () {
+        change()
+        $('.difficulty').text(`
+            MEDIUM
+        `)
+    }
+
+    startBtnToResetHard = function () {
+        change()
+        $('.difficulty').text(`
+            HARD
+        `)
+    }
+
+    startBtnToResetEasy = function () {
+        change()
+        $('.difficulty').text(`
+            EASY
+        `)
+    }
+
+    hardness = function () {
+        if (diffValues.easy === 1) {
+            startBtnToResetMedium()
+            return
+        } else if (diffValues.med === 1) {
+            startBtnToResetHard()
+            return
+        } else if (diffValues.hard === 1) {
+            startBtnToResetEasy()
+            return
+        }
+    }
+
+    startBtnToReset = function () {
+        $('.stBtn').text(`
+            RESET
+        `)
+    }
+
     scoreUpdate = function () {
         $('.score').html(`
-    <h4>${userScore.score}</h4>
-    `)
+            <h4>${valueHolder.score}</h4>
+        `)
     }
 
     gameOver = function () {
-        let finalScore = userScore.simonValues.length - 1
+        let finalScore = valueHolder.simonValues.length - 1
         audio6.play()
         scoreChange()
     }
 
     scoreChange = function () {
         $('.scoreWord').html(`
-        <h4>${'FINAL SCORE'}</h4>
+            <h4>${'FINAL SCORE'}</h4>
         `)
     }
 
     finalWordRevert = function () {
         $('.scoreWord').html(`
-        <h4>${'SCORE'}</h4>
+            <h4>${'SCORE'}</h4>
         `)
     }
 
     equalCheck = function () {
-        let simonV = userScore.simonValues
-        let userV = userScore.userValues
+        let simonV = valueHolder.simonValues
+        let userV = valueHolder.userValues
         for (let i = 0; i < userV.length; i++) {
             if (userV[i] !== simonV[i]) {
                 gameOver()
@@ -54,7 +113,7 @@ $(() => {
                     return
                 }
                 if (userV.toString() === simonV.toString()) {
-                    userScore.score++
+                    valueHolder.score++
                     startGame()
                     scoreUpdate()
                     return
@@ -64,19 +123,19 @@ $(() => {
     }
 
     btnAssignmentB1 = function () {
-        userScore.userValues.push('.b1')
+        valueHolder.userValues.push('.b1')
     }
 
     btnAssignmentR2 = function () {
-        userScore.userValues.push('.r2')
+        valueHolder.userValues.push('.r2')
     }
 
     btnAssignmentG3 = function () {
-        userScore.userValues.push('.g3')
+        valueHolder.userValues.push('.g3')
     }
 
     btnAssignmentY4 = function () {
-        userScore.userValues.push('.y4')
+        valueHolder.userValues.push('.y4')
     }
 
     delaySimon = function () {
@@ -131,7 +190,7 @@ $(() => {
     }
 
     showSimonMove = function () {
-        let simonArr = userScore.simonValues
+        let simonArr = valueHolder.simonValues
         let inc = 0
         for (i = 0; i < simonArr.length; i++) {
             if (simonArr[i] === '.b1') {
@@ -147,24 +206,25 @@ $(() => {
     }
 
     startGame = function () {
-        let randomBtnValue = userScore.btnValues[Math.floor(Math.random() * userScore.btnValues.length)]
-        userScore.simonValues.push(randomBtnValue)
-        userScore.userValues = []
+        let randomBtnValue = valueHolder.btnValues[Math.floor(Math.random() * valueHolder.btnValues.length)]
+        valueHolder.simonValues.push(randomBtnValue)
+        valueHolder.userValues = []
         delaySimon()
+        startBtnToReset()
     }
 
     startButton = function () {
-        let pName = prompt('WHO CHALLENGES SIMON?', "You cannot win")
-        if (pName != null) {
-            userScore.user = pName
-            reset()
-        }
+        // let pName = prompt('WHO CHALLENGES SIMON?', "Name?")
+        // if (pName != null) {
+        //     valueHolder.user = pName
+        reset()
+        // }
     }
 
     reset = function () {
-        userScore.score = 0
-        userScore.userValues = []
-        userScore.simonValues = []
+        valueHolder.score = 0
+        valueHolder.userValues = []
+        valueHolder.simonValues = []
         startGame()
         scoreUpdate()
         finalWordRevert()
@@ -173,7 +233,8 @@ $(() => {
 
     // click and keydown events
 
-    $('.startBtn').click(startButton)
+    $('.stBtn').click(startButton)
+    $('.difficulty').click(hardness)
     $('.b1').on('click', function () {
         btnAssignmentB1()
         equalCheck()
