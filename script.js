@@ -13,6 +13,8 @@ $(() => {
     var audio2= new Audio('etc/audio2.wav');
     var audio3= new Audio('etc/audio3.wav');
     var audio4= new Audio('etc/audio4.wav');
+    var audio5= new Audio('etc/audio5.wav');
+    var audio6= new Audio('etc/audio6.mp3');
 
     scoreUpdate = function () {
         $('.score').html(`
@@ -22,19 +24,19 @@ $(() => {
 
     gameOver = function () {
         let finalScore = userScore.simonValues.length - 1
-        alert(finalScore)
+        audio6.play()
     }
 
     equalCheck = function () {
         let simonV = userScore.simonValues
         let userV = userScore.userValues
         for (let i = 0; i < userV.length; i++) {
-            if (userV[i] !== simonV[i]) {
+            if (userV[i] !== simonV[i]) {  
                 gameOver()
                 return
             }
             if ((userV.length === simonV.length) && (userV[i] === simonV[i])) {
-                if (userV.toString() !== simonV.toString()) {
+                if (userV.toString() !== simonV.toString()) {                    
                     gameOver()
                     return
                 }
@@ -143,6 +145,8 @@ $(() => {
         if (pName != null) {
             userScore.user = pName
             reset()
+            audio5.play()
+
         }
     }
 
