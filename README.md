@@ -24,7 +24,7 @@ Planning: [Trello](https://trello.com/b/5Gu8LtKC/simon-says), [Draw.io](https://
 
 ## Wireframes
 
-[Wireframe 1](https://github.com/MichaelCraig7/SimonGame/blob/master/etc/wireframes/wireframe.xml)
+[Wireframe 1](https://github.com/MichaelCraig7/SimonGame/blob/master/etc/wireframes/wireframe.png)
 
 [Wireframe 2](https://github.com/MichaelCraig7/SimonGame/blob/master/etc/wireframes/wireframe2.jpg)
 
