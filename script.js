@@ -11,6 +11,7 @@ let diffValues = {
     easy: 1,
     med: 0,
     hard: 0,
+    up: 1,
 }
 
 $(() => {
@@ -26,12 +27,15 @@ $(() => {
         if (diffValues.easy === 1 && diffValues.hard === 0 && diffValues.med === 0) {
             diffValues.easy = 0
             diffValues.med = 1
+            diffValues.up = .5
         } else if (diffValues.easy === 0 && diffValues.hard === 0 && diffValues.med === 1) {
             diffValues.med = 0
             diffValues.hard = 1
+            diffValues.up = .33
         } else if (diffValues.easy === 0 && diffValues.hard === 1 && diffValues.med === 0) {
             diffValues.hard = 0
             diffValues.easy = 1
+            diffValues.up = 1
         }
     }
 
@@ -59,6 +63,7 @@ $(() => {
     hardness = function () {
         if (diffValues.easy === 1) {
             startBtnToResetMedium()
+
             return
         } else if (diffValues.med === 1) {
             startBtnToResetHard()
@@ -81,15 +86,38 @@ $(() => {
         `)
     }
 
+    btnBreak = function () {
+        document.getElementById(".b1").disabled = true
+        document.getElementById(".r2").disabled = true
+        document.getElementById(".g3").disabled = true
+        document.getElementById(".y4").disabled = true
+        // $('.b1 a').removeClass('.b1 blue')
+        // $('.b1 a').addClass('black')
+        // $('.r2').removeClass('.r2 red')
+        // $('.r2').addClass('black')
+        // $('.g3').removeClass('.g3 green')
+        // $('.g3').addClass('black')
+        // $('.y4 a').removeClass('.y4 yellow')
+        // $('.y4 a').addClass('black')
+    }
+
+    btnFix = function () {
+        document.getElementById(".b1").disabled = false
+        document.getElementById(".r2").disabled = false
+        document.getElementById(".g3").disabled = false
+        document.getElementById(".y4").disabled = false
+    }
+
     gameOver = function () {
         let finalScore = valueHolder.simonValues.length - 1
         audio6.play()
         scoreChange()
+        btnBreak()
     }
 
     scoreChange = function () {
         $('.scoreWord').html(`
-            <h4>${'FINAL SCORE'}</h4>
+            <h4>${'GAME OVER'}</h4>
         `)
     }
 
@@ -98,6 +126,12 @@ $(() => {
             <h4>${'SCORE'}</h4>
         `)
     }
+
+    // simonToScore = function () {
+    //     $('.scoreWord').html(`
+    //     <h4>${SCORE}</h4>
+    // `)
+    // }
 
     equalCheck = function () {
         let simonV = valueHolder.simonValues
@@ -194,13 +228,13 @@ $(() => {
         let inc = 0
         for (i = 0; i < simonArr.length; i++) {
             if (simonArr[i] === '.b1') {
-                setTimeout(b1Tester, inc += (i + i + 1 * 750))
+                setTimeout(b1Tester, inc += (i + i + 1 * (750 * diffValues.up)))
             } else if (simonArr[i] === '.r2') {
-                setTimeout(r2Tester, inc += (i + i + 1 * 750))
+                setTimeout(r2Tester, inc += (i + i + 1 * (750 * diffValues.up)))
             } else if (simonArr[i] === '.g3') {
-                setTimeout(g3Tester, inc += (i + i + 1 * 750))
+                setTimeout(g3Tester, inc += (i + i + 1 * (750 * diffValues.up)))
             } else if (simonArr[i] === '.y4') {
-                setTimeout(y4Tester, inc += (i + i + 1 * 750))
+                setTimeout(y4Tester, inc += (i + i + 1 * (750 * diffValues.up)))
             }
         }
     }
@@ -228,6 +262,8 @@ $(() => {
         startGame()
         scoreUpdate()
         finalWordRevert()
+        btnFix()
+        simonToScore()
     }
 
 
