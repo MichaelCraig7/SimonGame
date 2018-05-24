@@ -13,7 +13,7 @@ can then choose to change the difficulty and play again.
 
 ## Technologies
 
-Languages: HTML, CSS, JavaScript
+Languages: HTML, CSS, JavaScript, jQuery
 
 Styling: Materialize CSS
 
@@ -27,3 +27,10 @@ Planning: [Trello](https://trello.com/b/5Gu8LtKC/simon-says), [Draw.io](https://
 [Wireframe 1](https://github.com/MichaelCraig7/SimonGame/blob/master/etc/wireframes/wireframe.xml)
 
 [Wireframe 2](https://github.com/MichaelCraig7/SimonGame/blob/master/etc/wireframes/wireframe2.jpg)
+
+
+## Future Iterations
+
+- Secret modes unlocked through entering specific usernames
+- Button shake animations for when the user passes a specified score threshold 
+- A scoreboard that doesn't reset when the page is refreshed
