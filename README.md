@@ -1,4 +1,4 @@
-## Obey Simon
+# Obey Simon
 _____________________________________________________________________________________________________________________________
 
 Obey Simon is my version of the classic game where the user repeats back a sequence displayed by the computer.  
@@ -9,20 +9,22 @@ input matches the AI's, the user's score is updates, the next round begins, and 
 If the user's input is wrong, an audio cue alerts the user that they have lost, and the final score is displayed. The user 
 can then choose to change the difficulty and play again.
 
-#### Game: http://obeysimon.bitballoon.com/
+##### Game: http://obeysimon.bitballoon.com/
 
-### Technologies
+
+## Technologies
 _____________________________________________________________________________________________________________________________
 
-##### Languages: HTML, CSS, JavaScript
+Languages: HTML, CSS, JavaScript
 
-##### Styling: Materialize CSS
+Styling: Materialize CSS
 
-##### Editor: Visual Studio Code
+Editor: Visual Studio Code
 
-##### Planning: [Trello](https://trello.com/b/5Gu8LtKC/simon-says), [Draw.io](https://github.com/MichaelCraig7/SimonGame/blob/master/etc/wireframes/wireframe.xml)
+Planning: [Trello](https://trello.com/b/5Gu8LtKC/simon-says), [Draw.io](https://github.com/MichaelCraig7/SimonGame/blob/master/etc/wireframes/wireframe.xml)
 
-### Wireframes
+
+## Wireframes
 _____________________________________________________________________________________________________________________________
 
 [Wireframe 1](https://github.com/MichaelCraig7/SimonGame/blob/master/etc/wireframes/wireframe.xml)
