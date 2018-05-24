@@ -1,4 +1,6 @@
 
+// Value Holders
+
 let valueHolder = {
     user: '',
     score: 0,
@@ -22,6 +24,8 @@ $(() => {
     var audio4 = new Audio('etc/audio8.wav');
     // var audio5 = new Audio('etc/audio5.wav');
     var audio6 = new Audio('etc/audio6.mp3');
+
+// Difficulty Changing Functions
 
     change = function () {
         if (diffValues.easy === 1 && diffValues.hard === 0 && diffValues.med === 0) {
@@ -74,6 +78,8 @@ $(() => {
         }
     }
 
+// DOM Text Manipulation
+
     startBtnToReset = function () {
         $('.stBtn').text(`
             RESET
@@ -85,6 +91,20 @@ $(() => {
             <h4>${valueHolder.score}</h4>
         `)
     }
+
+    scoreChange = function () {
+        $('.scoreWord').html(`
+            <h4>${'GAME OVER'}</h4>
+        `)
+    }
+
+    finalWordRevert = function () {
+        $('.scoreWord').html(`
+            <h4>${'SCORE'}</h4>
+        `)
+    }
+
+// Break/Fix Button Functionality
 
     btnBreak = function () {
         document.getElementById(".b1").disabled = true
@@ -108,6 +128,8 @@ $(() => {
         document.getElementById(".y4").disabled = false
     }
 
+// End Game
+
     gameOver = function () {
         let finalScore = valueHolder.simonValues.length - 1
         audio6.play()
@@ -115,23 +137,7 @@ $(() => {
         btnBreak()
     }
 
-    scoreChange = function () {
-        $('.scoreWord').html(`
-            <h4>${'GAME OVER'}</h4>
-        `)
-    }
-
-    finalWordRevert = function () {
-        $('.scoreWord').html(`
-            <h4>${'SCORE'}</h4>
-        `)
-    }
-
-    // simonToScore = function () {
-    //     $('.scoreWord').html(`
-    //     <h4>${SCORE}</h4>
-    // `)
-    // }
+// Check Simon Array VS User Array
 
     equalCheck = function () {
         let simonV = valueHolder.simonValues
@@ -156,6 +162,8 @@ $(() => {
         }
     }
 
+// Button Functionality
+
     btnAssignmentB1 = function () {
         valueHolder.userValues.push('.b1')
     }
@@ -175,6 +183,8 @@ $(() => {
     delaySimon = function () {
         setTimeout(showSimonMove, 500)
     }
+
+// Button Audio and Animation
 
     b1Tester = function () {
         $('.b1 a').removeClass('blue')
@@ -239,6 +249,8 @@ $(() => {
         }
     }
 
+// Game Start
+
     startGame = function () {
         let randomBtnValue = valueHolder.btnValues[Math.floor(Math.random() * valueHolder.btnValues.length)]
         valueHolder.simonValues.push(randomBtnValue)
@@ -267,7 +279,7 @@ $(() => {
     }
 
 
-    // click and keydown events
+// Click & Keydown Events
 
     $('.stBtn').click(startButton)
     $('.difficulty').click(hardness)
@@ -294,13 +306,13 @@ $(() => {
     })
 
     $(document).keydown(function (e) {
-        if (e.keyCode == 32) {
+        if (e.keyCode === 32) {
             startButton()
         }
     })
 
     $(document).keydown(function (e) {
-        if (e.keyCode == 38) {
+        if (e.keyCode === 38) {
             btnAssignmentB1()
             equalCheck()
             audio1.play()
@@ -308,7 +320,7 @@ $(() => {
     })
 
     $(document).keydown(function (e) {
-        if (e.keyCode == 37) {
+        if (e.keyCode === 37) {
             btnAssignmentR2()
             equalCheck()
             audio2.play()
@@ -316,7 +328,7 @@ $(() => {
     })
 
     $(document).keydown(function (e) {
-        if (e.keyCode == 39) {
+        if (e.keyCode === 39) {
             btnAssignmentG3()
             equalCheck()
             audio3.play()
@@ -324,7 +336,7 @@ $(() => {
     })
 
     $(document).keydown(function (e) {
-        if (e.keyCode == 40) {
+        if (e.keyCode === 40) {
             btnAssignmentY4()
             equalCheck()
             audio4.play()

@@ -10,6 +10,7 @@
             font-family: nextGames;
             src: url('etc/game_power.ttf');
         }
+
         @font-face {
             font-family: nextGames1;
             src: url('etc/GameCube.ttf');
@@ -18,57 +19,49 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="style.css">
     <title>Simon</title>
 </head>
 
 <body>
-    <header>
-
-    </header>
-
     <div class='fourCircles container'>
         <div class='row'>
             <div class='b1 col s12 center'>
-                <a class="btn-floating btn-large waves-effect waves-light blue">
+                <a class="btn-floating btn-large waves-effect blue white-text center-text">
+                    <p class="b1Text white-text">&#9650;</p>
                 </a>
             </div>
         </div>
         <div class='row'>
-            <span class='col s4 right-align'>
-                <a class="r2 btn-floating btn-large waves-effect waves-light red">
+            <div class='col s4 right-align'>
+                <a class="r2 btn-floating btn-large waves-effect red white-text">
+                    <p class="r2Text white-text">&#9664;</p>
                 </a>
-            </span>
-            <span class='startBtn center'>
+            </div>
+            <div class='startBtn center'>
                 <div class="col s4">
-                    <a class="stBtn waves-effect waves-light btn-small white black-text">START</a>
+                    <a class="stBtn waves-effect btn-small white black-text">START</a>
                     <div class='border'>
                         <h4 class='scoreWord'>SIMON</h4>
                         <h4 class='score'>0</h4>
                     </div>
-                    <a class="difficulty waves-effect waves-light btn-small white black-text">EASY</a>
+                    <a class="difficulty waves-effect btn-small white black-text">EASY</a>
                 </div>
-            </span>
-            <span class='col s4 left-align'>
-                <a class="g3 btn-floating btn-large waves-effect waves-light green">
+            </div>
+            <div class='col s4 left-align'>
+                <a class="g3 btn-floating btn-large waves-effect green white-text">
+                    <p class="g3Text white-text">&#9654;</p>
                 </a>
-            </span>
+            </div>
         </div>
         <div class='row'>
             <div class='y4 col s12 center'>
-                <a class="btn-floating btn-large waves-effect waves-light yellow">
+                <a class="btn-floating btn-large waves-effect yellow white-text">
+                    <p class="y4Text white-text">&#9660;</p>
                 </a>
             </div>
         </div>
-    </div>
-    </div>
-    <div>
-        <!-- <div class='startBtn container'>
-            <div class="valign row col s4">
-                <a class="waves-effect waves-light btn-small white black-text">start</a>
-            </div>
-        </div> -->
     </div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>

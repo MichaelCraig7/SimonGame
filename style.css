@@ -13,23 +13,60 @@ body {
 .b1 .btn-floating {
     width: 200px;
     height: 200px;
-    padding: 0;
+    font-size: 40px;
+    line-height:5em;
+}
+
+.b1Text {
+    width: 200px;
+    height: 200px;
+    font-size: 40px;
+    line-height: 3em;
 }
 
 .col .r2 {
     width: 200px;
     height: 200px;
+    font-size: 40px;
+    line-height:5em;
+}
+
+.r2Text {
+    width: 200px;
+    height: 200px;
+    font-size: 40px;
+    line-height: 3em;
+    border: black, 1px;
 }
 
 .col .g3 {
     width: 200px;
     height: 200px;
+    font-size: 40px;
+    line-height:5em;
+}
+
+.g3Text {
+    width: 200px;
+    height: 200px;
+    font-size: 40px;
+    line-height: 3em;
+    border: black, 1px;
 }
 
 .y4 .btn-floating {
     width: 200px;
     height: 200px;
-    padding: 0;
+    font-size: 40px;
+    line-height: 5em;
+}
+
+.y4Text {
+    width: 200px;
+    height: 200px;
+    font-size: 40px;
+    line-height: 3em;
+    border: black, 1px;
 }
 
 .reset {
@@ -47,7 +84,7 @@ body {
 }
 
 .stBtn {
-        font-family: nextGames;
+    font-family: nextGames;
 }
 
 .difficulty {
