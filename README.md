@@ -1,5 +1,4 @@
 # Obey Simon
-_____________________________________________________________________________________________________________________________
 
 Obey Simon is my version of the classic game where the user repeats back a sequence displayed by the computer.  
 When the page is opened, the clean GUI presents all information necessary to being playing the game instantly.
@@ -13,7 +12,6 @@ can then choose to change the difficulty and play again.
 
 
 ## Technologies
-_____________________________________________________________________________________________________________________________
 
 Languages: HTML, CSS, JavaScript
 
@@ -25,7 +23,6 @@ Planning: [Trello](https://trello.com/b/5Gu8LtKC/simon-says), [Draw.io](https://
 
 
 ## Wireframes
-_____________________________________________________________________________________________________________________________
 
 [Wireframe 1](https://github.com/MichaelCraig7/SimonGame/blob/master/etc/wireframes/wireframe.xml)
 
