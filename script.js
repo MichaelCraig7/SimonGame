@@ -107,10 +107,10 @@ $(() => {
 // Break/Fix Button Functionality
 
     btnBreak = function () {
-        document.getElementById(".b1").disabled = true
-        document.getElementById(".r2").disabled = true
-        document.getElementById(".g3").disabled = true
-        document.getElementById(".y4").disabled = true
+        document.getElementsByClassName(".b1").disabled = true
+        document.getElementsByClassName(".r2").disabled = true
+        document.getElementsByClassName(".g3").disabled = true
+        document.getElementsByClassName(".y4").disabled = true
         // $('.b1 a').removeClass('.b1 blue')
         // $('.b1 a').addClass('black')
         // $('.r2').removeClass('.r2 red')
@@ -122,10 +122,10 @@ $(() => {
     }
 
     btnFix = function () {
-        document.getElementById(".b1").disabled = false
-        document.getElementById(".r2").disabled = false
-        document.getElementById(".g3").disabled = false
-        document.getElementById(".y4").disabled = false
+        document.getElementsByClassName(".b1").disabled = false
+        document.getElementsByClassName(".r2").disabled = false
+        document.getElementsByClassName(".g3").disabled = false
+        document.getElementsByClassName(".y4").disabled = false
     }
 
 // End Game
@@ -187,50 +187,50 @@ $(() => {
 // Button Audio and Animation
 
     b1Tester = function () {
-        $('.b1 a').removeClass('blue')
-        $('.b1 a').addClass('black')
+        $('.b1 .btn-floating').removeClass('blue')
+        $('.b1 .btn-floating').addClass('black')
         audio1.play()
         setTimeout(b1Tester2, 200)
     }
     b1Tester2 = function () {
-        $('.b1 a').removeClass('black')
-        $('.b1 a').addClass('blue')
+        $('.b1 .btn-floating').removeClass('black')
+        $('.b1 .btn-floating').addClass('blue')
     }
 
     r2Tester = function () {
-        $('.r2').removeClass('red')
-        $('.r2').addClass('black')
+        $('.r2 .btn-floating').removeClass('red')
+        $('.r2 .btn-floating').addClass('black')
         audio2.play()
 
         setTimeout(r2Tester2, 200)
     }
     r2Tester2 = function () {
-        $('.r2').removeClass('black')
-        $('.r2').addClass('red')
+        $('.r2 .btn-floating').removeClass('black')
+        $('.r2 .btn-floating').addClass('red')
     }
 
     g3Tester = function () {
-        $('.g3').removeClass('green')
-        $('.g3').addClass('black')
+        $('.g3 .btn-floating').removeClass('green')
+        $('.g3 .btn-floating').addClass('black')
         audio3.play()
 
         setTimeout(g3Tester2, 200)
     }
     g3Tester2 = function () {
-        $('.g3').removeClass('black')
-        $('.g3').addClass('green')
+        $('.g3 .btn-floating').removeClass('black')
+        $('.g3 .btn-floating').addClass('green')
     }
 
     y4Tester = function () {
-        $('.y4 a').removeClass('yellow')
-        $('.y4 a').addClass('black')
+        $('.y4 .btn-floating').removeClass('yellow')
+        $('.y4 .btn-floating').addClass('black')
         audio4.play()
 
         setTimeout(y4Tester2, 200)
     }
     y4Tester2 = function () {
-        $('.y4 a').removeClass('black')
-        $('.y4 a').addClass('yellow')
+        $('.y4 .btn-floating').removeClass('black')
+        $('.y4 .btn-floating').addClass('yellow')
     }
 
     showSimonMove = function () {
@@ -275,7 +275,6 @@ $(() => {
         scoreUpdate()
         finalWordRevert()
         btnFix()
-        simonToScore()
     }
 
 
