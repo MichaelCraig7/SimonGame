@@ -13,7 +13,9 @@ can then choose to change the difficulty and play again.
 
 ## Technologies
 
-Languages: HTML, CSS, JavaScript, jQuery
+Languages: HTML, CSS, JavaScript
+
+Other: jQuery
 
 Styling: Materialize CSS
 
